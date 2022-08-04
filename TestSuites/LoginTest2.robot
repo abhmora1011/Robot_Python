@@ -3,7 +3,7 @@ Documentation    To validate the login error message
 Library    Collections
 Resource    training_resource.robot
 Test Setup      open the browser with OrangeDemo url
-Test Teardown       close browser session
+#Test Teardown       close browser session
 
 *** Test Cases ***
 #Verify that error message appears
@@ -23,6 +23,7 @@ Verify card display in the shopping page
     click the login button
     wait until element is located in the page   ${shop_page_load}
     verify card titles in the shop page
+    select the card    Nokia Edge
 
 
 *** Keywords ***
@@ -66,7 +67,14 @@ verify card titles in the shop page
     END
     LISTS SHOULD BE EQUAL    ${expectedList}   ${actualList}
 
+# To select a specific card
 select the card
     [Arguments]    ${cardName}
-
-    click button    xpath:(//*[@class='card-footer'])[4]/button
+    ${elements} =   GET WEBELEMENTS    css:.card-title
+    # To assign a value to a variable use SET VARIABLE
+    ${index} =    SET VARIABLE    1
+    FOR    ${element}    IN    @{elements}
+        EXIT FOR LOOP IF    '${cardName}' == '${element.text}'    # When comparing wrap it on a ' qoute
+        ${index} =  EVALUATE    ${index} + 1    # When incrementing include the EVALUATE keyword if not robot will not add the value
+    END
+    CLICK BUTTON    xpath:(//*[@class='card-footer'])[${index}]/button
