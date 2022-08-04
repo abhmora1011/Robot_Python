@@ -1,5 +1,6 @@
 *** Settings ***
 Documentation    To validate the login error message
+Library    Collections
 Resource    training_resource.robot
 Test Setup      open the browser with OrangeDemo url
 Test Teardown       close browser session
@@ -52,12 +53,18 @@ wait until element is located in the page
 
 verify card titles in the shop page
     #use robot keyword to create list
-    @{expected_list} =  CREATE LIST     iphone X    Samsung Note 8      Nokia Edge      Blackberry
-    ${item_list} =   GET WEBELEMENTS    css:.card-title
-    @{actual_list} =    CREATE LIST
-    FOR     ${item}  IN    @{item_list}
-        LOG     ${item.text}
+    # @ is used when you create something new list
+    # Scalar variable = $   @{variablename}     @{variablename}[0] // A     @{variablename}[1] // B
+    # List variable = @     @{variablename}     @{variablename}[0] // A     @{variablename}[1] // B
+    # Dictionary variable = &   &{Variablename}     &{Variablename}[key1] // A      &{Variablename}[key2] // B
+    @{expectedList} =  CREATE LIST    iphone X    Samsung Note 8    Nokia Edge    Blackberry
+    ${elements} =   GET WEBELEMENTS    css:.card-title
+    @{actualList} =    CREATE LIST
+    FOR    ${element}    IN    @{elements}
+        LOG     ${element.text}
+        APPEND TO LIST    ${actual_list}    ${element.text}    # APPEND TO LIST is activated by having the Collections library
     END
+    LISTS SHOULD BE EQUAL    ${expectedList}   ${actualList}
 
 select the card
     [Arguments]    ${cardName}
