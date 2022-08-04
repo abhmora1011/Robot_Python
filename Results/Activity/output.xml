@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220803 22:55:27.596" rpa="false" schemaversion="3">
+<suite id="s1" name="Activity1" source="C:\Users\WONDERS\Desktop\training\TestSuites\Activity1.robot">
+<test id="s1-t1" name="Verify if the user send a delivery order" line="17">
+<kw name="open the browser with POS url" library="resource" type="SETUP">
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220803 22:55:27.745" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220803 22:55:27.745" endtime="20220803 22:55:28.904"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220803 22:55:28.904" endtime="20220803 22:55:29.039"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220803 22:55:29.039" level="INFO">Opening url 'https://qa.letsdochinese.com/KJTCore/resources/'</msg>
+<status status="PASS" starttime="20220803 22:55:29.039" endtime="20220803 22:55:31.852"/>
+</kw>
+<status status="PASS" starttime="20220803 22:55:27.745" endtime="20220803 22:55:31.852"/>
+</kw>
+<kw name="fill out the username and password fields">
+<arg>${user_name}</arg>
+<arg>${valid_password}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:username</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220803 22:55:31.854" endtime="20220803 22:55:31.908"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220803 22:55:31.908" level="INFO">Typing text 'aora' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220803 22:55:31.908" endtime="20220803 22:55:32.015"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220803 22:55:32.015" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20220803 22:55:32.054" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220803 22:55:32.103" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220803 22:55:32.015" endtime="20220803 22:55:32.103"/>
+</kw>
+<status status="PASS" starttime="20220803 22:55:31.853" endtime="20220803 22:55:32.104"/>
+</kw>
+<kw name="click the login button">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220803 22:55:32.104" level="INFO">Clicking button 'id:login'.</msg>
+<status status="PASS" starttime="20220803 22:55:32.104" endtime="20220803 22:55:32.193"/>
+</kw>
+<status status="PASS" starttime="20220803 22:55:32.104" endtime="20220803 22:55:32.193"/>
+</kw>
+<kw name="check if main page is visible">
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220803 22:55:35.195" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220803 22:55:32.193" endtime="20220803 22:55:35.195"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${username_lbl}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220803 22:55:35.195" endtime="20220803 22:55:35.229"/>
+</kw>
+<status status="PASS" starttime="20220803 22:55:32.193" endtime="20220803 22:55:35.229"/>
+</kw>
+<kw name="check if the user_lbl is correct">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${username_lbl}</arg>
+<arg>${user_name_login}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220803 22:55:35.235" level="INFO">Verifying element 'id:username' contains exact text 'AORA - TRAINEE'.</msg>
+<status status="PASS" starttime="20220803 22:55:35.234" endtime="20220803 22:55:35.254"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220803 22:55:45.262" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220803 22:55:35.254" endtime="20220803 22:55:45.262"/>
+</kw>
+<status status="PASS" starttime="20220803 22:55:35.234" endtime="20220803 22:55:45.262"/>
+</kw>
+<kw name="select restaurant">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:resdiv</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220803 22:55:45.262" endtime="20220803 22:55:45.295"/>
+</kw>
+<status status="PASS" starttime="20220803 22:55:45.262" endtime="20220803 22:55:45.295"/>
+</kw>
+<kw name="close browser session" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220803 22:55:45.295" endtime="20220803 22:55:47.464"/>
+</kw>
+<status status="PASS" starttime="20220803 22:55:45.295" endtime="20220803 22:55:47.464"/>
+</kw>
+<doc>This is to test the end to end flow of sending an order to POS</doc>
+<status status="PASS" starttime="20220803 22:55:27.745" endtime="20220803 22:55:47.464"/>
+</test>
+<doc>To validate the login error message</doc>
+<status status="PASS" starttime="20220803 22:55:27.600" endtime="20220803 22:55:47.464"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Activity1">Activity1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
