@@ -3,11 +3,11 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${username_lbl}             id:username
-${restaurant_btn}           css:li[id='8acf750f-b04c-4eba-b9e5-166644f0a89b']
+${restaurant_btn}           id:6b1bf2af-be65-11e2-97ab-00ff685223c2
 ${user_name}                aora
 ${valid_password}           kjt
 ${invalid_password}         123
-${url}                      https://qa.letsdochinese.com/KJTCore/resources/
+${url}                      https://qa.letsdochinese.com/KJTCore/resources/index.html
 ${login_error}              id:message
 ${user_name_login}          AORA - TRAINEE
 

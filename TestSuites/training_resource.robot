@@ -7,7 +7,6 @@ ${user_name}                rahulshettyacademy
 ${valid_password}           learning
 ${invalid_password}         12345
 ${url}                      https://www.rahulshettyacademy.com/loginpagePractise/
-${element}                  css:a.nav-link
 ${shop_page_load}           css:a.nav-link
 
 *** Keywords ***

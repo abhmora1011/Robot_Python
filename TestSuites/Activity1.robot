@@ -37,7 +37,7 @@ fill out the username and password fields
     input password      id:password         ${password}
 
 click the login button
-    click button        id:login
+    CLICK BUTTON    id:login
 
 check if main page is visible
     sleep    3
@@ -49,9 +49,9 @@ check if the user_lbl is correct
 
 select restaurant
     wait until element is visible    id:resdiv
-#    wait until element is visible    ${restaurant_btn}
-#    click button    ${restaurant_btn}
-#    sleep    10
+    wait until element is visible    ${restaurant_btn}
+    click button    ${restaurant_btn}
+    sleep    10
 
 #select an order
 #
