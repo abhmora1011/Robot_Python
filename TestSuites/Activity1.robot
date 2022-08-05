@@ -21,10 +21,8 @@ Verify if the user send a delivery order
     check if main page is visible
     check if the user_lbl is correct
     select restaurant
-#    select restaurant
-#
-#    select an order
-#    enter details
+    select an order type
+    enter details
 #    select category
 #    select dish
 #    send and verify
@@ -41,22 +39,28 @@ click the login button
 
 check if main page is visible
     sleep    3
-    wait until element is visible    ${username_lbl}
+    wait until element is visible    ${username_lbl}    10
+
 
 check if the user_lbl is correct
     element text should be     ${username_lbl}     ${user_name_login}
-    sleep    10
 
 select restaurant
-    wait until element is visible    id:resdiv
     wait until element is visible    ${restaurant_btn}
-    click button    ${restaurant_btn}
-    sleep    10
+    click element    ${restaurant_btn}
 
-#select an order
-#
-#enter details
-#
+select an order type
+    click element    ${res_delivery_btn}
+
+enter details
+    SLEEP    3
+    wait until element is visible   ${phone_txt}
+    INPUT TEXT    ${phone_txt}  ${number}
+    SLEEP    3
+    wait until element is visible   ${name_txt}
+    INPUT TEXT    ${name_txt}   ${user_name}
+    SLEEP    3
+
 #select category
 #
 #select dish
