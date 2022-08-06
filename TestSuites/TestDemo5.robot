@@ -14,9 +14,10 @@ Test Template   Verify Unsuccessful Login
 #special character       $#@             learning
 
 *** Test Cases ***
-#    This test case is declare since test case is mandatory to the robot framework to run.
+#    This test case is declare test case since it is mandatory to the robot framework to run.
 #    ${username} and ${password} will fetched to the CSV and then it is passed to the keyword implementation
 #    abe and ora will populate the username and password if the test case cannot fetch the data from file
+#    yung naka declare na login test case dito is mabibigay kung sa CSV is wlaang nakadeclare na test case name
 Login with user ${username} and password ${password}    abe    ora
 
 *** Keywords ***
