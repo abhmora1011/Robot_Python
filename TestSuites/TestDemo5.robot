@@ -4,6 +4,7 @@ Documentation    To validate the login error message
 Library    DataDriver    file=resources/data.csv    encoding=utf_8    dialect=unix
 Library    SeleniumLibrary
 Library    Collections
+Library    ../CustomLibraries/Shop.py
 Test Template   Verify Unsuccessful Login
 
 # Hindi sya error hindi nya lang mabasa ng tama sa IDE or plugin issue
@@ -43,6 +44,7 @@ Fill out the login form
     input text      id:username  ${username}
     input password  id:password  ${password}
     CLICK ELEMENT   id:signInBtn
+    hello world
 
 wait until it checks and display error message
     wait until element is visible   css:.alert-danger
