@@ -23,9 +23,9 @@ Verify if the user send a delivery order
     select restaurant
     select an order type
     enter details
-#    select category
-#    select dish
-#    send and verify
+    select category
+    select dish
+    send and verify
 
 *** Keywords ***
 fill out the username and password fields
@@ -39,7 +39,7 @@ click the login button
 
 check if main page is visible
     sleep    3
-    wait until element is visible    ${username_lbl}    10
+    wait until element is visible    ${username_lbl}    10s
 
 
 check if the user_lbl is correct
@@ -56,17 +56,34 @@ enter details
     SLEEP    3
     wait until element is visible   ${phone_txt}
     INPUT TEXT    ${phone_txt}  ${number}
-    SLEEP    3
-    wait until element is visible   ${name_txt}
-    INPUT TEXT    ${name_txt}   ${user_name}
+    PRESS KEYS    ${phone_txt}    ENTER
+    wait until element is visible   ${street_res}
+    INPUT TEXT    ${street_res}   NEW YORK
+    PRESS KEYS    ${phone_txt}    ENTER
+    PRESS KEYS    ${phone_txt}    ENTER
+    wait until element is visible    id:city
+    INPUT TEXT    id:city   MEDINA
+    PRESS KEYS    id:city    ENTER
+    EXECUTE JAVASCRIPT    document.body.style.zoom="80%"
     SLEEP    3
 
-#select category
-#
-#select dish
-#
-#send and verify
-#
+select category
+    #wait until element is visible    css:#cat_72536726-bf23-11e2-a268-80ee733c5b56
+    #${category} =    GET TEXT    css:#cat_72536726-bf23-11e2-a268-80ee733c5b56 div
+    #LOG    ${category.text}
+    Execute JavaScript  $("#cat_72536726-bf23-11e2-a268-80ee733c5b56").click()
+
+select dish
+    #wait until element is visible    css:#dish_a1bf7c71-bd17-49b2-baad-14761074b85b
+    #${dish} =    GET TEXT    css:#dish_a1bf7c71-bd17-49b2-baad-14761074b85b div
+    #LOG     ${dish.text}
+    Execute JavaScript  $("#dish_a1bf7c71-bd17-49b2-baad-14761074b85b").click()
+
+
+send and verify
+    WAIT UNTIL ELEMENT IS ENABLED   css:#send
+    Execute JavaScript  $("#send").click()
+
 #verify error login
 #    [Arguments]    ${error}
 #    wait until element is visible   ${error}

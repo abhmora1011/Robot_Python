@@ -13,13 +13,13 @@ ${login_error}              id:message
 ${user_name_login}          AORA - TRAINEE - MNL
 ${number}                   (321) 560-7043
 ${phone_txt}                id:originPhone
-${name_txt}                 css:input#name
+${street_res}               xpath://*[@id="address1"]
 
 *** Keywords ***
 open the browser with POS url
         create webdriver    Chrome  executable_path=chromedriver
+        set browser implicit wait    10 s
         maximize browser window
-        SET BROWSER IMPLICIT WAIT    5 s
         Go To       ${url}
 
 close browser session

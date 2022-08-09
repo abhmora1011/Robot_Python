@@ -20,11 +20,18 @@ class Shop:
         print("Hello World!")
 
     @keyword
-    def add_items_to_cart_and_checkout(self, productList):
+    def add_items_to_cart_and_checkout(self, product_list):
         # @{elements} =   GET WEBELEMENTS    css:.card-title
         # GET WEBELEMENTS =  magagamit mo na yung get webelements pero small case and yung space papalitan ng underscore
-        self.selLib.get_webelements("css:.card-title")
+        i = 1
+        product_titles = self.selLib.get_webelements("css:.card-title")
+        for product_title in product_titles:
+            if product_title.text in product_list:
+                self.selLib.click_button("xpath:(//*[@class='card-footer'])["+str(i)+"]/button")
+            i = i + 1
 
+        self.selLib.scroll_element_into_view("xpath://a[contains(text(),'Checkout')]")
+        self.selLib.click_element("xpath://a[contains(text(),'Checkout')]")
 
 
 
