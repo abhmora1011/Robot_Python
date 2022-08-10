@@ -9,10 +9,7 @@ ${login_btn}                id:login
 ${username_locator}         id:username
 ${password_locator}         id:password
 
-${res_delivery_btn}         xpath://div[@id='delivery']
-${number}                   (321) 560-7043
-${phone_txt}                id:originPhone
-${street_res}               xpath://*[@id="address1"]
+
 
 *** Keywords ***
 fill out the username and password fields

@@ -4,7 +4,7 @@ Library    SeleniumLibrary
 *** Variables ***
 ${username_lbl}             id:username
 ${user_name_login}          AORA - TRAINEE - MNL
-${restaurant_btn}           xpath://*[@id="6b1bf2af-be65-11e2-97ab-00ff685223c2"]
+${restaurant_btn}           xpath://*[@id="eb801cf9-3baf-11e9-b9d2-0ae6b636cf20"]
 
 *** Keywords ***
 
