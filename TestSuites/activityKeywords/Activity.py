@@ -8,6 +8,6 @@ class Activity:
         self.selLib = BuiltIn().get_library_instance("SeleniumLibrary")
 
     @keyword
-    def sample_keyword(self):
-        print("Hello")
+    def explicitly_wait(self, time):
+        self.selLib.wait_until_element_is_visible("")
 

@@ -4,7 +4,7 @@ Library    ../activityKeywords/Activity.py
 
 *** Variables ***
 ${res_delivery_btn}         id:delivery
-${number}                   (321) 560-7043
+${number}                   (121) 560-7010
 ${phone_txt_locator}        id:originPhone
 ${street_res}               id:address1
 ${city_txt_locator}         id:city
@@ -18,7 +18,6 @@ select an order type
     SLEEP    3
 
 enter details
-    sample keyword
     wait until element is visible   ${phone_txt_locator}
     INPUT TEXT    ${phone_txt_locator}  ${number}
     PRESS KEYS    ${phone_txt_locator}    ENTER
@@ -40,7 +39,6 @@ select dish
     WAIT UNTIL ELEMENT IS ENABLED    ${dish_btn}
     CLICK ELEMENT    ${dish_btn}
     CLICK ELEMENT    xpath://*[@id="askAndClickModal"]/div/div/div[3]/button
-    SLEEP    10
 
 send and verify
     WAIT UNTIL ELEMENT IS ENABLED    ${send_btn}

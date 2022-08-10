@@ -10,7 +10,6 @@ ${username_locator}         id:username
 ${password_locator}         id:password
 
 
-
 *** Keywords ***
 fill out the username and password fields
     [Arguments]         ${username}     ${password}

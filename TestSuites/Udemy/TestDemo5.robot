@@ -24,6 +24,7 @@ Login with user ${username} and password ${password}    abe    ora
 
 # This is the test template
 Verify Unsuccessful Login
+    [Tags]
 #   ${username}    ${password} should be replace the username and password from the testcases row when adding to CSV.
 #   see the CSV file for example
 #   data in CSV should be separated by comma and not double space

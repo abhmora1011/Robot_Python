@@ -1,262 +1,286 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220810 01:14:06.459" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220810 02:21:27.084" rpa="false" schemaversion="3">
 <suite id="s1" name="SendOrderTest" source="C:\Users\WONDERS\Desktop\training\TestSuites\SendOrderTest.robot">
-<test id="s1-t1" name="Verify if the user send a delivery order" line="13">
+<test id="s1-t1" name="Valid username" line="14">
 <kw name="open the browser with POS url" library="resource" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220810 01:14:06.587" level="INFO">Opening browser 'chrome' to base url 'https://qa.letsdochinese.com/KJTCore/resources/index.html'.</msg>
-<status status="PASS" starttime="20220810 01:14:06.587" endtime="20220810 01:14:11.509"/>
+<msg timestamp="20220810 02:21:27.230" level="INFO">Opening browser 'chrome' to base url 'https://qa.letsdochinese.com/KJTCore/resources/index.html'.</msg>
+<status status="PASS" starttime="20220810 02:21:27.229" endtime="20220810 02:21:34.571"/>
 </kw>
 <kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
 <arg>10 s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220810 01:14:11.509" endtime="20220810 01:14:11.510"/>
+<status status="PASS" starttime="20220810 02:21:34.572" endtime="20220810 02:21:34.573"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220810 01:14:11.510" endtime="20220810 01:14:11.633"/>
+<status status="PASS" starttime="20220810 02:21:34.573" endtime="20220810 02:21:34.704"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220810 01:14:14.639" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220810 01:14:11.635" endtime="20220810 01:14:14.639"/>
+<msg timestamp="20220810 02:21:37.710" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220810 02:21:34.704" endtime="20220810 02:21:37.710"/>
 </kw>
-<status status="PASS" starttime="20220810 01:14:06.586" endtime="20220810 01:14:14.639"/>
+<status status="PASS" starttime="20220810 02:21:27.229" endtime="20220810 02:21:37.710"/>
 </kw>
+<kw name="Verify if the user send a delivery order">
+<tag>Smoke</tag>
+<doc>This is to test the end to end flow of sending an order to POS</doc>
 <kw name="fill out the username and password fields" library="LoginPage">
 <arg>${user_name_txt}</arg>
 <arg>${valid_password_txt}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${username_locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220810 01:14:14.640" endtime="20220810 01:14:14.664"/>
+<status status="PASS" starttime="20220810 02:21:37.712" endtime="20220810 02:21:37.735"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${username_locator}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220810 01:14:14.664" level="INFO">Typing text 'aora' into text field 'id:username'.</msg>
-<status status="PASS" starttime="20220810 01:14:14.664" endtime="20220810 01:14:14.716"/>
+<msg timestamp="20220810 02:21:37.735" level="INFO">Typing text 'aora' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220810 02:21:37.735" endtime="20220810 02:21:37.792"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${password_locator}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220810 01:14:14.716" level="INFO">Typing password into text field 'id:password'.</msg>
-<msg timestamp="20220810 01:14:14.742" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220810 01:14:14.772" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220810 01:14:14.716" endtime="20220810 01:14:14.772"/>
+<msg timestamp="20220810 02:21:37.793" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20220810 02:21:37.821" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220810 02:21:37.859" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220810 02:21:37.792" endtime="20220810 02:21:37.859"/>
 </kw>
-<status status="PASS" starttime="20220810 01:14:14.639" endtime="20220810 01:14:14.772"/>
+<status status="PASS" starttime="20220810 02:21:37.711" endtime="20220810 02:21:37.859"/>
 </kw>
 <kw name="click the login button" library="LoginPage">
 <arg>${login_btn}</arg>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220810 01:14:14.772" level="INFO">Clicking button 'id:login'.</msg>
-<status status="PASS" starttime="20220810 01:14:14.772" endtime="20220810 01:14:14.822"/>
+<msg timestamp="20220810 02:21:37.860" level="INFO">Clicking button 'id:login'.</msg>
+<status status="PASS" starttime="20220810 02:21:37.860" endtime="20220810 02:21:37.910"/>
 </kw>
-<status status="PASS" starttime="20220810 01:14:14.772" endtime="20220810 01:14:14.822"/>
+<status status="PASS" starttime="20220810 02:21:37.859" endtime="20220810 02:21:37.910"/>
 </kw>
 <kw name="check if main page is visible" library="LandingPage">
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220810 01:14:17.832" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220810 01:14:14.822" endtime="20220810 01:14:17.832"/>
+<msg timestamp="20220810 02:21:40.921" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220810 02:21:37.910" endtime="20220810 02:21:40.921"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${username_lbl}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220810 01:14:17.832" endtime="20220810 01:14:18.949"/>
+<status status="PASS" starttime="20220810 02:21:40.921" endtime="20220810 02:21:41.498"/>
 </kw>
-<status status="PASS" starttime="20220810 01:14:14.822" endtime="20220810 01:14:18.950"/>
+<status status="PASS" starttime="20220810 02:21:37.910" endtime="20220810 02:21:41.498"/>
 </kw>
 <kw name="check if the user_lbl is correct" library="LandingPage">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>${username_lbl}</arg>
 <arg>${user_name_login}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220810 01:14:18.951" level="INFO">Verifying element 'id:username' contains exact text 'AORA - TRAINEE - MNL'.</msg>
-<status status="PASS" starttime="20220810 01:14:18.951" endtime="20220810 01:14:18.969"/>
+<msg timestamp="20220810 02:21:41.500" level="INFO">Verifying element 'id:username' contains exact text 'AORA - TRAINEE - MNL'.</msg>
+<status status="PASS" starttime="20220810 02:21:41.500" endtime="20220810 02:21:41.512"/>
 </kw>
-<status status="PASS" starttime="20220810 01:14:18.950" endtime="20220810 01:14:18.969"/>
+<status status="PASS" starttime="20220810 02:21:41.499" endtime="20220810 02:21:41.512"/>
 </kw>
 <kw name="select restaurant" library="LandingPage">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${restaurant_btn}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220810 01:14:18.971" endtime="20220810 01:14:23.674"/>
+<status status="PASS" starttime="20220810 02:21:41.512" endtime="20220810 02:21:45.987"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${restaurant_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220810 01:14:23.674" level="INFO">Clicking element 'xpath://*[@id="eb801cf9-3baf-11e9-b9d2-0ae6b636cf20"]'.</msg>
-<status status="PASS" starttime="20220810 01:14:23.674" endtime="20220810 01:14:32.384"/>
+<msg timestamp="20220810 02:21:45.987" level="INFO">Clicking element 'xpath://*[@id="eb801cf9-3baf-11e9-b9d2-0ae6b636cf20"]'.</msg>
+<status status="PASS" starttime="20220810 02:21:45.987" endtime="20220810 02:21:55.235"/>
 </kw>
-<status status="PASS" starttime="20220810 01:14:18.970" endtime="20220810 01:14:32.384"/>
+<status status="PASS" starttime="20220810 02:21:41.512" endtime="20220810 02:21:55.235"/>
 </kw>
 <kw name="select an order type" library="OrderingPage">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${res_delivery_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220810 01:14:32.385" level="INFO">Clicking element 'xpath://div[@id='delivery']'.</msg>
-<status status="PASS" starttime="20220810 01:14:32.384" endtime="20220810 01:14:32.453"/>
+<msg timestamp="20220810 02:21:55.236" level="INFO">Clicking element 'xpath://div[@id='delivery']'.</msg>
+<status status="PASS" starttime="20220810 02:21:55.236" endtime="20220810 02:21:55.285"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220810 01:14:35.453" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220810 01:14:32.453" endtime="20220810 01:14:35.453"/>
+<msg timestamp="20220810 02:21:58.299" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220810 02:21:55.285" endtime="20220810 02:21:58.299"/>
 </kw>
-<status status="PASS" starttime="20220810 01:14:32.384" endtime="20220810 01:14:35.454"/>
+<status status="PASS" starttime="20220810 02:21:55.235" endtime="20220810 02:21:58.299"/>
 </kw>
 <kw name="enter details" library="OrderingPage">
-<kw name="Sample Keyword" library="Activity">
-<msg timestamp="20220810 01:14:35.456" level="INFO">Hello</msg>
-<status status="PASS" starttime="20220810 01:14:35.455" endtime="20220810 01:14:35.456"/>
-</kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${phone_txt_locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220810 01:14:35.456" endtime="20220810 01:14:35.480"/>
+<status status="PASS" starttime="20220810 02:21:58.301" endtime="20220810 02:21:58.327"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${phone_txt_locator}</arg>
 <arg>${number}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220810 01:14:35.481" level="INFO">Typing text '(321) 560-7043' into text field 'id:originPhone'.</msg>
-<status status="PASS" starttime="20220810 01:14:35.481" endtime="20220810 01:14:35.563"/>
+<msg timestamp="20220810 02:21:58.328" level="INFO">Typing text '(121) 560-7010' into text field 'id:originPhone'.</msg>
+<status status="PASS" starttime="20220810 02:21:58.328" endtime="20220810 02:21:58.400"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${phone_txt_locator}</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220810 01:14:35.563" level="INFO">Sending key(s) ('ENTER',) to id:originPhone element.</msg>
-<msg timestamp="20220810 01:14:35.873" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20220810 01:14:35.873" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20220810 01:14:35.563" endtime="20220810 01:14:35.885"/>
+<msg timestamp="20220810 02:21:58.402" level="INFO">Sending key(s) ('ENTER',) to id:originPhone element.</msg>
+<msg timestamp="20220810 02:21:58.680" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20220810 02:21:58.681" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20220810 02:21:58.400" endtime="20220810 02:21:58.693"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${phone_txt_locator}</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220810 01:14:35.885" level="INFO">Sending key(s) ('ENTER',) to id:originPhone element.</msg>
-<msg timestamp="20220810 01:14:36.176" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20220810 01:14:36.176" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20220810 01:14:35.885" endtime="20220810 01:14:36.189"/>
+<msg timestamp="20220810 02:21:58.693" level="INFO">Sending key(s) ('ENTER',) to id:originPhone element.</msg>
+<msg timestamp="20220810 02:21:58.990" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20220810 02:21:58.990" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20220810 02:21:58.693" endtime="20220810 02:21:59.003"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${street_res}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220810 01:14:36.189" endtime="20220810 01:14:36.207"/>
+<status status="PASS" starttime="20220810 02:21:59.003" endtime="20220810 02:21:59.021"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${street_res}</arg>
 <arg>NEW YORK</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220810 01:14:36.207" level="INFO">Typing text 'NEW YORK' into text field 'id:address1'.</msg>
-<status status="PASS" starttime="20220810 01:14:36.207" endtime="20220810 01:14:36.281"/>
+<msg timestamp="20220810 02:21:59.021" level="INFO">Typing text 'NEW YORK' into text field 'id:address1'.</msg>
+<status status="PASS" starttime="20220810 02:21:59.021" endtime="20220810 02:21:59.071"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${phone_txt_locator}</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220810 01:14:36.282" level="INFO">Sending key(s) ('ENTER',) to id:originPhone element.</msg>
-<msg timestamp="20220810 01:14:36.594" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20220810 01:14:36.594" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20220810 01:14:36.281" endtime="20220810 01:14:36.618"/>
+<msg timestamp="20220810 02:21:59.072" level="INFO">Sending key(s) ('ENTER',) to id:originPhone element.</msg>
+<msg timestamp="20220810 02:21:59.345" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20220810 02:21:59.345" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20220810 02:21:59.071" endtime="20220810 02:21:59.356"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${phone_txt_locator}</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220810 01:14:36.618" level="INFO">Sending key(s) ('ENTER',) to id:originPhone element.</msg>
-<msg timestamp="20220810 01:14:36.897" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20220810 01:14:36.897" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20220810 01:14:36.618" endtime="20220810 01:14:36.906"/>
+<msg timestamp="20220810 02:21:59.357" level="INFO">Sending key(s) ('ENTER',) to id:originPhone element.</msg>
+<msg timestamp="20220810 02:21:59.640" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20220810 02:21:59.640" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20220810 02:21:59.357" endtime="20220810 02:21:59.651"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${city_txt_locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220810 01:14:36.906" endtime="20220810 01:14:36.921"/>
+<status status="PASS" starttime="20220810 02:21:59.651" endtime="20220810 02:21:59.661"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${city_txt_locator}</arg>
 <arg>MEDINA</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220810 01:14:36.922" level="INFO">Typing text 'MEDINA' into text field 'id:city'.</msg>
-<status status="PASS" starttime="20220810 01:14:36.921" endtime="20220810 01:14:36.968"/>
+<msg timestamp="20220810 02:21:59.662" level="INFO">Typing text 'MEDINA' into text field 'id:city'.</msg>
+<status status="PASS" starttime="20220810 02:21:59.661" endtime="20220810 02:21:59.712"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${city_txt_locator}</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220810 01:14:36.968" level="INFO">Sending key(s) ('ENTER',) to id:city element.</msg>
-<msg timestamp="20220810 01:14:37.263" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20220810 01:14:37.263" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20220810 01:14:36.968" endtime="20220810 01:14:37.282"/>
+<msg timestamp="20220810 02:21:59.712" level="INFO">Sending key(s) ('ENTER',) to id:city element.</msg>
+<msg timestamp="20220810 02:22:00.009" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20220810 02:22:00.009" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20220810 02:21:59.712" endtime="20220810 02:22:00.035"/>
 </kw>
-<status status="PASS" starttime="20220810 01:14:35.455" endtime="20220810 01:14:37.282"/>
+<status status="PASS" starttime="20220810 02:21:58.299" endtime="20220810 02:22:00.035"/>
 </kw>
 <kw name="select category" library="OrderingPage">
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <arg>${cat_btn}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220810 01:14:37.283" endtime="20220810 01:14:37.311"/>
+<status status="PASS" starttime="20220810 02:22:00.035" endtime="20220810 02:22:00.064"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${cat_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220810 01:14:37.312" level="INFO">Clicking element 'xpath://div[contains(text(),'CHICKEN')]'.</msg>
-<status status="PASS" starttime="20220810 01:14:37.311" endtime="20220810 01:14:37.364"/>
+<msg timestamp="20220810 02:22:00.065" level="INFO">Clicking element 'xpath://div[contains(text(),'CHICKEN')]'.</msg>
+<status status="PASS" starttime="20220810 02:22:00.064" endtime="20220810 02:22:00.122"/>
 </kw>
-<status status="PASS" starttime="20220810 01:14:37.283" endtime="20220810 01:14:37.364"/>
+<status status="PASS" starttime="20220810 02:22:00.035" endtime="20220810 02:22:00.123"/>
 </kw>
 <kw name="select dish" library="OrderingPage">
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <arg>${dish_btn}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220810 01:14:37.366" endtime="20220810 01:14:37.397"/>
+<status status="PASS" starttime="20220810 02:22:00.123" endtime="20220810 02:22:00.174"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${dish_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220810 01:14:37.398" level="INFO">Clicking element 'id:dish_76172f3b-de16-4052-baba-83dbda0041ed'.</msg>
-<status status="PASS" starttime="20220810 01:14:37.397" endtime="20220810 01:14:37.479"/>
+<msg timestamp="20220810 02:22:00.174" level="INFO">Clicking element 'id:dish_76172f3b-de16-4052-baba-83dbda0041ed'.</msg>
+<status status="PASS" starttime="20220810 02:22:00.174" endtime="20220810 02:22:00.253"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="askAndClickModal"]/div/div/div[3]/button</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220810 01:14:37.480" level="INFO">Clicking element 'xpath://*[@id="askAndClickModal"]/div/div/div[3]/button'.</msg>
-<status status="PASS" starttime="20220810 01:14:37.479" endtime="20220810 01:14:37.649"/>
+<msg timestamp="20220810 02:22:00.254" level="INFO">Clicking element 'xpath://*[@id="askAndClickModal"]/div/div/div[3]/button'.</msg>
+<status status="PASS" starttime="20220810 02:22:00.253" endtime="20220810 02:22:00.427"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220810 01:14:47.653" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20220810 01:14:37.649" endtime="20220810 01:14:47.653"/>
+<status status="PASS" starttime="20220810 02:22:00.123" endtime="20220810 02:22:00.427"/>
 </kw>
-<status status="PASS" starttime="20220810 01:14:37.365" endtime="20220810 01:14:47.654"/>
+<kw name="send and verify" library="OrderingPage">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${send_btn}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220810 02:22:00.428" endtime="20220810 02:22:00.454"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${send_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220810 02:22:00.456" level="INFO">Clicking element 'css:#send'.</msg>
+<status status="PASS" starttime="20220810 02:22:00.456" endtime="20220810 02:22:00.703"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>$("#modalFooterDiv #continueBtn").click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220810 02:22:00.705" level="INFO">Executing JavaScript:
+$("#modalFooterDiv #continueBtn").click()
+Without any arguments.</msg>
+<status status="PASS" starttime="20220810 02:22:00.704" endtime="20220810 02:22:01.520"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>$("#modalFooterDiv #continueBtn").click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220810 02:22:01.522" level="INFO">Executing JavaScript:
+$("#modalFooterDiv #continueBtn").click()
+Without any arguments.</msg>
+<status status="PASS" starttime="20220810 02:22:01.521" endtime="20220810 02:22:01.577"/>
+</kw>
+<status status="PASS" starttime="20220810 02:22:00.428" endtime="20220810 02:22:01.578"/>
+</kw>
+<status status="PASS" starttime="20220810 02:21:37.711" endtime="20220810 02:22:01.578"/>
 </kw>
 <kw name="close browser session" library="resource" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220810 01:14:47.656" endtime="20220810 01:14:49.797"/>
+<status status="PASS" starttime="20220810 02:22:01.578" endtime="20220810 02:22:03.705"/>
 </kw>
-<status status="PASS" starttime="20220810 01:14:47.655" endtime="20220810 01:14:49.797"/>
+<status status="PASS" starttime="20220810 02:22:01.578" endtime="20220810 02:22:03.705"/>
 </kw>
-<doc>This is to test the end to end flow of sending an order to POS</doc>
-<status status="PASS" starttime="20220810 01:14:06.586" endtime="20220810 01:14:49.798"/>
+<status status="PASS" starttime="20220810 02:21:27.228" endtime="20220810 02:22:03.706"/>
 </test>
 <doc>To validate the login error message</doc>
-<status status="PASS" starttime="20220810 01:14:06.461" endtime="20220810 01:14:49.800"/>
+<status status="PASS" starttime="20220810 02:21:27.085" endtime="20220810 02:22:03.709"/>
 </suite>
 <statistics>
 <total>
