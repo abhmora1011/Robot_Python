@@ -13,6 +13,7 @@ ${shop_page_load}           css:a.nav-link
 open the browser with OrangeDemo url
         create webdriver    Chrome  executable_path=chromedriver
         maximize browser window
+
         SET BROWSER IMPLICIT WAIT    10 s
         IF  '${url}' == 'site1'
             ${url}  SET VARIABLE    https://www.rahulshettyacademy.com/loginpagePractise/

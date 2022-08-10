@@ -2,7 +2,7 @@
 Documentation    To validate the login error message
 Resource    training_resource.robot
 Library    Collections
-Library    ../CustomLibraries/Shop.py
+Library    ../../CustomLibraries/Shop.py
 Test Setup      open the browser with OrangeDemo url
 Test Teardown   close browser session
 
@@ -17,7 +17,6 @@ Verify card display in the shopping page
     click the login button
     wait until element is located in the page   ${shop_page_load}
     verify card titles in the shop page
-    hello world
     add items to cart and checkout  ${listOfProducts}
 
 *** Keywords ***
@@ -27,7 +26,6 @@ Fill out the login form
     input password  id:password  ${password}
 
 click the login button
-    #if ID is used no need to specify the id locator
     click button    id:signInBtn
 
 wait until element is located in the page
