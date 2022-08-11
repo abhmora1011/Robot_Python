@@ -2,6 +2,7 @@
 Documentation    To validate the child window
 Library    Collections
 Library    String
+Library    AllureReportingLibrary
 Resource    training_resource.robot
 Test Setup      open the browser with OrangeDemo url
 Test Teardown       close browser session

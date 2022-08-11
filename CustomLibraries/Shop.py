@@ -4,7 +4,6 @@ from robot.api.deco import library, keyword
 # declare this to include in the library
 from robot.libraries.BuiltIn import BuiltIn
 
-
 @library
 class Shop:
 
@@ -32,6 +31,8 @@ class Shop:
 
         self.selLib.scroll_element_into_view("xpath://a[contains(text(),'Checkout')]")
         self.selLib.click_element("xpath://a[contains(text(),'Checkout')]")
+
+
 
 
 
