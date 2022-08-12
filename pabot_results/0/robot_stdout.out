@@ -1,0 +1,37 @@
+==============================================================================
+Training                                                                      
+==============================================================================
+Training.TestSuites                                                           
+==============================================================================
+Training.TestSuites.SendOrderTest :: To validate the login error message      
+==============================================================================
+Valid username                                                          
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\WONDERS\Desktop\training\TestSuites\SendOrderTest.robot:14
+    T:  Valid username    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\WONDERS\Desktop\training\TestSuites\SendOrderTest.robot:0
+      Verify if the user send a delivery order    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\WONDERS\Desktop\training\TestSuites\SendOrderTest.robot:24
+      check if the user_lbl is correct    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\WONDERS\Desktop\training\TestSuites\activityPages\LandingPage.robot:16
+      Element Text Should Be    ${username_lbl}    ${user_name_login}
+      |  ${username_lbl} = id:username (str)
+      |  ${user_name_login} = AORA - TRAINEE - MNL (str)
+______________________________________________________________________________
+| FAIL |
+The text of element 'id:username' should have been 'AORA - TRAINEE - MNL' but it was ''.
+------------------------------------------------------------------------------
+Training.TestSuites.SendOrderTest :: To validate the login error m... | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Training.TestSuites                                                   | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Training                                                              | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\WONDERS\Desktop\training\pabot_results\0\output.xml

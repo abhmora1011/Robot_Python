@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220811 19:00:10.811" rpa="false" schemaversion="3">
+<suite id="s1" name="Training" source="C:\Users\WONDERS\Desktop\training">
+<suite id="s1-s1" name="TestSuites" source="C:\Users\WONDERS\Desktop\training\TestSuites">
+<suite id="s1-s1-s1" name="Udemy" source="C:\Users\WONDERS\Desktop\training\TestSuites\Udemy">
+<suite id="s1-s1-s1-s1" name="LoginTest" source="C:\Users\WONDERS\Desktop\training\TestSuites\Udemy\LoginTest.robot">
+<test id="s1-s1-s1-s1-t1" name="Verify that login works" line="9">
+<kw name="open the browser with OrangeDemo url">
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=../chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220811 19:00:11.181" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20220811 19:00:11.222" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20220811 19:00:11.222" level="FAIL">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</msg>
+<status status="FAIL" starttime="20220811 19:00:11.181" endtime="20220811 19:00:11.231"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220811 19:00:11.236" endtime="20220811 19:00:11.236"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.rahulshettyacademy.com/loginpagePractise/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" starttime="20220811 19:00:11.236" endtime="20220811 19:00:11.236"/>
+</kw>
+<status status="FAIL" starttime="20220811 19:00:11.181" endtime="20220811 19:00:11.236"/>
+</kw>
+<kw name="fill out the username and password fields">
+<status status="NOT RUN" starttime="20220811 19:00:11.236" endtime="20220811 19:00:11.236"/>
+</kw>
+<kw name="wait login error message">
+<status status="NOT RUN" starttime="20220811 19:00:11.236" endtime="20220811 19:00:11.236"/>
+</kw>
+<kw name="verify error message is correct">
+<status status="NOT RUN" starttime="20220811 19:00:11.236" endtime="20220811 19:00:11.236"/>
+</kw>
+<status status="FAIL" starttime="20220811 19:00:11.179" endtime="20220811 19:00:11.236">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<doc>To validate the login error message</doc>
+<status status="FAIL" starttime="20220811 19:00:10.861" endtime="20220811 19:00:11.238"/>
+</suite>
+<status status="FAIL" starttime="20220811 19:00:10.861" endtime="20220811 19:00:11.238"/>
+</suite>
+<status status="FAIL" starttime="20220811 19:00:10.858" endtime="20220811 19:00:11.241"/>
+</suite>
+<status status="FAIL" starttime="20220811 19:00:10.831" endtime="20220811 19:00:11.241"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Training">Training</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="TestSuites">Training.TestSuites</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Udemy">Training.TestSuites.Udemy</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="LoginTest">Training.TestSuites.Udemy.LoginTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

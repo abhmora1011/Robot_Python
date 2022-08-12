@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220811 19:00:10.829" rpa="false" schemaversion="3">
+<suite id="s1" name="Training" source="C:\Users\WONDERS\Desktop\training">
+<suite id="s1-s1" name="TestSuites" source="C:\Users\WONDERS\Desktop\training\TestSuites">
+<suite id="s1-s1-s1" name="Udemy" source="C:\Users\WONDERS\Desktop\training\TestSuites\Udemy">
+<suite id="s1-s1-s1-s1" name="TestDemo3" source="C:\Users\WONDERS\Desktop\training\TestSuites\Udemy\TestDemo3.robot">
+<test id="s1-s1-s1-s1-t1" name="Validate Child window functionality" line="11">
+<kw name="open the browser with OrangeDemo url" library="training_resource" type="SETUP">
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220811 19:00:11.214" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220811 19:00:11.211" endtime="20220811 19:00:14.590"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220811 19:00:14.590" endtime="20220811 19:00:14.737"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>10 s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220811 19:00:14.737" endtime="20220811 19:00:14.737"/>
+</kw>
+<if>
+<branch type="IF" condition="'${url}' == 'site1'">
+<kw name="Set Variable" library="BuiltIn">
+<var>${url}</var>
+<arg>https://www.rahulshettyacademy.com/loginpagePractise/</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220811 19:00:14.741" level="INFO">${url} = https://www.rahulshettyacademy.com/loginpagePractise/</msg>
+<status status="PASS" starttime="20220811 19:00:14.741" endtime="20220811 19:00:14.741"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:14.737" endtime="20220811 19:00:14.742"/>
+</branch>
+<branch type="ELSE IF" condition="'${url}' == 'site2'">
+<kw name="Set Variable" library="BuiltIn">
+<var>${url}</var>
+<arg>https://rahulshettyacademy.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220811 19:00:14.743" endtime="20220811 19:00:14.744"/>
+</kw>
+<status status="NOT RUN" starttime="20220811 19:00:14.742" endtime="20220811 19:00:14.744"/>
+</branch>
+<status status="PASS" starttime="20220811 19:00:14.737" endtime="20220811 19:00:14.744"/>
+</if>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220811 19:00:14.744" level="INFO">Opening url 'https://www.rahulshettyacademy.com/loginpagePractise/'</msg>
+<status status="PASS" starttime="20220811 19:00:14.744" endtime="20220811 19:00:15.538"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:11.211" endtime="20220811 19:00:15.539"/>
+</kw>
+<kw name="Select the link of the child window">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.blinkingText</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220811 19:00:15.541" level="INFO">Clicking element 'css:.blinkingText'.</msg>
+<status status="PASS" starttime="20220811 19:00:15.541" endtime="20220811 19:00:15.734"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220811 19:00:20.746" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220811 19:00:15.734" endtime="20220811 19:00:20.746"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:15.540" endtime="20220811 19:00:20.747"/>
+</kw>
+<kw name="Verify the user is switched to child window">
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220811 19:00:20.748" endtime="20220811 19:00:20.761"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css:h1</arg>
+<arg>DOCUMENTS REQUEST</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220811 19:00:20.762" level="INFO">Verifying element 'css:h1' contains exact text 'DOCUMENTS REQUEST'.</msg>
+<status status="PASS" starttime="20220811 19:00:20.762" endtime="20220811 19:00:20.807"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:20.747" endtime="20220811 19:00:20.808"/>
+</kw>
+<kw name="Grab the email id in the child window">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>css:.red</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220811 19:00:20.841" level="INFO">${text} = Please email us at mentor@rahulshettyacademy.com with below template to receive response</msg>
+<status status="PASS" starttime="20220811 19:00:20.810" endtime="20220811 19:00:20.841"/>
+</kw>
+<kw name="Split String" library="String">
+<var>@{words}</var>
+<arg>${text}</arg>
+<arg>at</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20220811 19:00:20.843" level="INFO">@{words} = [ Please email us  |  mentor@rahulshettyacademy.com with below templ | e to receive response ]</msg>
+<status status="PASS" starttime="20220811 19:00:20.841" endtime="20220811 19:00:20.843"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${textSplit}</var>
+<arg>${words}</arg>
+<arg>1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20220811 19:00:20.844" level="INFO">${textSplit} =  mentor@rahulshettyacademy.com with below templ</msg>
+<status status="PASS" starttime="20220811 19:00:20.843" endtime="20220811 19:00:20.844"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${textSplit}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220811 19:00:20.845" level="INFO"> mentor@rahulshettyacademy.com with below templ</msg>
+<status status="PASS" starttime="20220811 19:00:20.845" endtime="20220811 19:00:20.846"/>
+</kw>
+<kw name="Split String" library="String">
+<var>@{word_2}</var>
+<arg>${textSplit}</arg>
+<arg>with</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20220811 19:00:20.847" level="INFO">@{word_2} = [  mentor@rahulshettyacademy.com  |  below templ ]</msg>
+<status status="PASS" starttime="20220811 19:00:20.846" endtime="20220811 19:00:20.847"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${email}</var>
+<arg>${word_2}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20220811 19:00:20.849" level="INFO">${email} =  mentor@rahulshettyacademy.com </msg>
+<status status="PASS" starttime="20220811 19:00:20.848" endtime="20220811 19:00:20.849"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${email}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220811 19:00:20.850" level="INFO">${email} =  mentor@rahulshettyacademy.com </msg>
+<status status="PASS" starttime="20220811 19:00:20.849" endtime="20220811 19:00:20.850"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:20.808" endtime="20220811 19:00:20.850"/>
+</kw>
+<kw name="Switch to Parent window to enter the email">
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220811 19:00:20.852" endtime="20220811 19:00:20.879"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>LoginPage Practise | Rahul Shetty Academy</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220811 19:00:20.884" level="INFO">Page title is 'LoginPage Practise | Rahul Shetty Academy'.</msg>
+<status status="PASS" starttime="20220811 19:00:20.880" endtime="20220811 19:00:20.884"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220811 19:00:20.892" level="INFO">Typing text ' mentor@rahulshettyacademy.com ' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220811 19:00:20.884" endtime="20220811 19:00:21.044"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220811 19:00:26.049" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220811 19:00:21.044" endtime="20220811 19:00:26.049"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:20.851" endtime="20220811 19:00:26.049"/>
+</kw>
+<kw name="close browser session" library="training_resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220811 19:00:26.052" endtime="20220811 19:00:28.182"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:26.049" endtime="20220811 19:00:28.182"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:11.211" endtime="20220811 19:00:28.182"/>
+</test>
+<doc>To validate the child window</doc>
+<status status="PASS" starttime="20220811 19:00:10.886" endtime="20220811 19:00:28.182"/>
+</suite>
+<status status="PASS" starttime="20220811 19:00:10.881" endtime="20220811 19:00:28.188"/>
+</suite>
+<status status="PASS" starttime="20220811 19:00:10.876" endtime="20220811 19:00:28.188"/>
+</suite>
+<status status="PASS" starttime="20220811 19:00:10.850" endtime="20220811 19:00:28.191"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Training">Training</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="TestSuites">Training.TestSuites</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Udemy">Training.TestSuites.Udemy</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="TestDemo3">Training.TestSuites.Udemy.TestDemo3</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220811 19:00:10.906" level="ERROR">Error in file 'C:\Users\WONDERS\Desktop\training\TestSuites\Udemy\TestDemo3.robot' on line 5: Importing library 'AllureReportingLibrary' failed: ModuleNotFoundError: No module named 'AllureReportingLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\WONDERS\Desktop\training\venv\Scripts\robot.exe
+  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\python310.zip
+  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\DLLs
+  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\lib
+  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310
+  C:\Users\WONDERS\Desktop\training\venv
+  C:\Users\WONDERS\Desktop\training\venv\lib\site-packages</msg>
+</errors>
+</robot>

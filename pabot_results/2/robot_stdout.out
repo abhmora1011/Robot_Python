@@ -1,0 +1,24 @@
+==============================================================================
+Training                                                                      
+==============================================================================
+Training.TestSuites                                                           
+==============================================================================
+Training.TestSuites.Udemy                                                     
+==============================================================================
+Training.TestSuites.Udemy.PageObjectDemo :: To validate the login error mes...
+==============================================================================
+Verify card display in the shopping page                              | PASS |
+------------------------------------------------------------------------------
+Training.TestSuites.Udemy.PageObjectDemo :: To validate the login ... | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Training.TestSuites.Udemy                                             | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Training.TestSuites                                                   | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Training                                                              | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\Users\WONDERS\Desktop\training\pabot_results\2\output.xml

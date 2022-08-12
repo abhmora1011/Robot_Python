@@ -5,7 +5,7 @@ Library    SeleniumLibrary
 ${url}                      site1
 
 *** Keywords ***
-open the browser with OrangeDemo url
+open the browser with url
         create webdriver    Chrome  executable_path=chromedriver
         delete all cookies
         maximize browser window
@@ -18,6 +18,11 @@ open the browser with OrangeDemo url
         END
 
         Go To       ${url}
+
+#open the browser with url
+#        [Arguments]    ${browser_name}
+#        create webdriver    ${browser_name}  executable_path=${browser_name}
+#        Go To       ${url}
 
 close browser session
         close browser

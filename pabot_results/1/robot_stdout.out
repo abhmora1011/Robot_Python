@@ -1,0 +1,37 @@
+==============================================================================
+Training                                                                      
+==============================================================================
+Training.TestSuites                                                           
+==============================================================================
+Training.TestSuites.Udemy                                                     
+==============================================================================
+Training.TestSuites.Udemy.LoginTest :: To validate the login error message    
+==============================================================================
+Verify that login works                                                 
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\WONDERS\Desktop\training\TestSuites\Udemy\LoginTest.robot:9
+    T:  Verify that login works    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\WONDERS\Desktop\training\TestSuites\Udemy\LoginTest.robot:10
+      open the browser with OrangeDemo url    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\WONDERS\Desktop\training\TestSuites\Udemy\LoginTest.robot:17
+      Create Webdriver    Chrome    executable_path=../chromedriver
+______________________________________________________________________________
+| FAIL |
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+------------------------------------------------------------------------------
+Training.TestSuites.Udemy.LoginTest :: To validate the login error... | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Training.TestSuites.Udemy                                             | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Training.TestSuites                                                   | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Training                                                              | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\WONDERS\Desktop\training\pabot_results\1\output.xml

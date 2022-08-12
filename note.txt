@@ -1,0 +1,49 @@
+cmd
+
+robot . = to run all the robot file in sequence
+
+-----------------------------------------------------------
+
+pabot plugin to run the test in parallel
+installation - pip install -U robotframework-pabot
+
+execute all
+pabot .
+
+Split execution to suite files.
+pabot [path to tests]
+
+Split execution on test level.
+pabot --testlevelsplit [path to tests]
+
+Run same tests with two different configurations.
+pabot --argumentfile1 first.args --argumentfile2 second.args [path to tests]
+
+------------------------------------------
+
+Command Line Scenarios                          Commands
+Execute All tests in the folder                 robot .
+Execute specific test                           robot <testfilename>.robot
+Execute Test cases by the test name             robot --t <testname> .
+Execute Test cases by tags in any file          robot --include <tagname> .
+Execute Test cases by multiple tags             robot --include <tagname1>AND<tagname1> .
+                                                robot --include <tagname1>OR<tagname1> .
+Exclude the tests by tag                        robot --exclude <tagname> .
+Execute tests by Suite name                     robot --suite   <foldername>
+Execute only Failed Tests                       robot --rerunfailed output.xml
+
+Ex.
+Run test case with validate keyword
+robot -t <Validate*> .
+
+To run test to a specific browser
+robot --variable browser_name:Firefox <suite>.robot
+
+We can combine the different commands based on our preference
+robot --variable browser_name:Firefox --include Smoke <suite>.robot
+robot --variable browser_name:Firefox --include SmokeORRegression <suite>.robot
+robot --variable browser_name:Firefox --include SmokeANDRegression <suite>.robot
+
+------------------------------------------
+
+

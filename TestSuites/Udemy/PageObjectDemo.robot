@@ -10,7 +10,7 @@ Library    ../../CustomLibraries/Shop.py
 Library    AllureReportingLibrary
 Suite Setup
 Suite Teardown
-Test Setup          open the browser with OrangeDemo url
+Test Setup          open the browser with url
 Test Teardown       close browser session
 
 *** Variables ***
@@ -20,6 +20,7 @@ Test Teardown       close browser session
 *** Test Cases ***
 
 Verify card display in the shopping page
+    [Tags]    Smoke
     # Pwede iconcat yung page name para if ever na may same keyword existing sa ibang page maspecify
     LandingPage.fill out the login form    ${user_name}     ${valid_password}
     click the login button

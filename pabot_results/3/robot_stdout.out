@@ -1,0 +1,24 @@
+==============================================================================
+Training                                                                      
+==============================================================================
+Training.TestSuites                                                           
+==============================================================================
+Training.TestSuites.Udemy                                                     
+==============================================================================
+Training.TestSuites.Udemy.TestDemo3 :: To validate the child window           
+==============================================================================
+Validate Child window functionality                                   | PASS |
+------------------------------------------------------------------------------
+Training.TestSuites.Udemy.TestDemo3 :: To validate the child window   | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Training.TestSuites.Udemy                                             | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Training.TestSuites                                                   | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Training                                                              | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\Users\WONDERS\Desktop\training\pabot_results\3\output.xml

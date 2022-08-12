@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220811 19:00:10.712" rpa="false" schemaversion="3">
+<suite id="s1" name="Training" source="C:\Users\WONDERS\Desktop\training">
+<suite id="s1-s1" name="TestSuites" source="C:\Users\WONDERS\Desktop\training\TestSuites">
+<suite id="s1-s1-s1" name="SendOrderTest" source="C:\Users\WONDERS\Desktop\training\TestSuites\SendOrderTest.robot">
+<test id="s1-s1-s1-t1" name="Valid username" line="14">
+<kw name="open the browser with POS url" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220811 19:00:11.141" level="INFO">Opening browser 'chrome' to base url 'https://qa.letsdochinese.com/KJTCore/resources/index.html'.</msg>
+<status status="PASS" starttime="20220811 19:00:11.141" endtime="20220811 19:00:18.104"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>10 s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220811 19:00:18.104" endtime="20220811 19:00:18.108"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220811 19:00:18.109" endtime="20220811 19:00:18.333"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220811 19:00:21.337" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220811 19:00:18.333" endtime="20220811 19:00:21.338"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:11.141" endtime="20220811 19:00:21.338"/>
+</kw>
+<kw name="Verify if the user send a delivery order">
+<tag>Smoke</tag>
+<doc>This is to test the end to end flow of sending an order to POS</doc>
+<kw name="fill out the username and password fields" library="LoginPage">
+<arg>${user_name_txt}</arg>
+<arg>${valid_password_txt}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220811 19:00:21.344" endtime="20220811 19:00:21.393"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_locator}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220811 19:00:21.393" level="INFO">Typing text 'aora' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220811 19:00:21.393" endtime="20220811 19:00:21.493"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220811 19:00:21.495" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20220811 19:00:21.541" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220811 19:00:21.595" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220811 19:00:21.494" endtime="20220811 19:00:21.596"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:21.342" endtime="20220811 19:00:21.596"/>
+</kw>
+<kw name="click the login button" library="LoginPage">
+<arg>${login_btn}</arg>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220811 19:00:21.598" level="INFO">Clicking button 'id:login'.</msg>
+<status status="PASS" starttime="20220811 19:00:21.598" endtime="20220811 19:00:21.699"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:21.596" endtime="20220811 19:00:21.699"/>
+</kw>
+<kw name="check if main page is visible" library="LandingPage">
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220811 19:00:24.708" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220811 19:00:21.700" endtime="20220811 19:00:24.708"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${username_lbl}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220811 19:00:24.708" endtime="20220811 19:00:24.741"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:21.699" endtime="20220811 19:00:24.742"/>
+</kw>
+<kw name="check if the user_lbl is correct" library="LandingPage">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${username_lbl}</arg>
+<arg>${user_name_login}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220811 19:00:24.742" level="INFO">Verifying element 'id:username' contains exact text 'AORA - TRAINEE - MNL'.</msg>
+<msg timestamp="20220811 19:00:24.982" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220811 19:00:24.982" level="FAIL">The text of element 'id:username' should have been 'AORA - TRAINEE - MNL' but it was ''.</msg>
+<status status="FAIL" starttime="20220811 19:00:24.742" endtime="20220811 19:00:24.982"/>
+</kw>
+<status status="FAIL" starttime="20220811 19:00:24.742" endtime="20220811 19:00:24.992"/>
+</kw>
+<kw name="select restaurant" library="LandingPage">
+<status status="NOT RUN" starttime="20220811 19:00:24.992" endtime="20220811 19:00:24.992"/>
+</kw>
+<kw name="select an order type" library="OrderingPage">
+<status status="NOT RUN" starttime="20220811 19:00:24.992" endtime="20220811 19:00:24.992"/>
+</kw>
+<kw name="enter details" library="OrderingPage">
+<status status="NOT RUN" starttime="20220811 19:00:24.992" endtime="20220811 19:00:24.992"/>
+</kw>
+<kw name="select category" library="OrderingPage">
+<status status="NOT RUN" starttime="20220811 19:00:24.992" endtime="20220811 19:00:24.992"/>
+</kw>
+<kw name="select dish" library="OrderingPage">
+<status status="NOT RUN" starttime="20220811 19:00:24.992" endtime="20220811 19:00:24.992"/>
+</kw>
+<kw name="send and verify" library="OrderingPage">
+<status status="NOT RUN" starttime="20220811 19:00:24.992" endtime="20220811 19:00:24.992"/>
+</kw>
+<status status="FAIL" starttime="20220811 19:00:21.339" endtime="20220811 19:00:24.992"/>
+</kw>
+<kw name="close browser session" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220811 19:00:24.992" endtime="20220811 19:00:27.171"/>
+</kw>
+<status status="PASS" starttime="20220811 19:00:24.992" endtime="20220811 19:00:27.171"/>
+</kw>
+<status status="FAIL" starttime="20220811 19:00:11.136" endtime="20220811 19:00:27.171">The text of element 'id:username' should have been 'AORA - TRAINEE - MNL' but it was ''.</status>
+</test>
+<doc>To validate the login error message</doc>
+<status status="FAIL" starttime="20220811 19:00:10.776" endtime="20220811 19:00:27.171"/>
+</suite>
+<status status="FAIL" starttime="20220811 19:00:10.771" endtime="20220811 19:00:27.171"/>
+</suite>
+<status status="FAIL" starttime="20220811 19:00:10.736" endtime="20220811 19:00:27.171"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Training">Training</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="TestSuites">Training.TestSuites</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="SendOrderTest">Training.TestSuites.SendOrderTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

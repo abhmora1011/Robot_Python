@@ -1,0 +1,10 @@
+datasources:b336cba759ad0f6a00fa944ddbd4ad2da2caf73f
+commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
+suitesfrom:no-suites-from-option
+file:2f6c8ffaab14fd0940f6b4472c006d17ec4591e3
+--suite Training.TestSuites.SendOrderTest
+--suite Training.TestSuites.Udemy.LoginTest
+--suite Training.TestSuites.Udemy.PageObjectDemo
+--suite Training.TestSuites.Udemy.TestDemo3
+--suite Training.TestSuites.Udemy.TestDemo5
+--suite Training.TestSuites.Udemy.TestDemo6
