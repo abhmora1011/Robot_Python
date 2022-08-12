@@ -44,6 +44,19 @@ robot --variable browser_name:Firefox --include Smoke <suite>.robot
 robot --variable browser_name:Firefox --include SmokeORRegression <suite>.robot
 robot --variable browser_name:Firefox --include SmokeANDRegression <suite>.robot
 
+robot -d Results TestSuites/Udemy/PageObjectDemo.robot
+
 ------------------------------------------
+
+Jenkins
+
+<DIRECTORY OF THE WAR FILE>java -jar jenkins.war -httpPort=9090
+
+C:\Users\WONDERS\.jenkins\secrets\initialAdminPassword
+139889b9dd5f4feeaeb0f7c906effdca
+
+abhmora1011 | sktmnl
+
+robot --variable browser_name:"$browserName" --include "$Tags" <suite>.robot
 
 
