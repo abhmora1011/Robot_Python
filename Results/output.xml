@@ -1,299 +1,225 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220811 22:55:48.122" rpa="false" schemaversion="3">
-<suite id="s1" name="PageObjectDemo" source="C:\Users\WONDERS\Desktop\training\TestSuites\Udemy\PageObjectDemo.robot">
-<test id="s1-t1" name="Verify card display in the shopping page" line="22">
-<kw name="open the browser with url" library="Generic" type="SETUP">
-<kw name="Create Webdriver" library="SeleniumLibrary">
-<arg>Chrome</arg>
-<arg>executable_path=chromedriver</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20220811 22:55:48.257" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20220811 22:55:48.257" endtime="20220811 22:55:49.359"/>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220812 21:29:09.464" rpa="false" schemaversion="3">
+<suite id="s1" name="TestDemoAPI" source="C:\Users\WONDERS\Desktop\training\API\TestDemoAPI.robot">
+<test id="s1-t1" name="Play around with dictionary" line="10">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{data}</var>
+<arg>name=rahulshetty</arg>
+<arg>course=${book_name}</arg>
+<arg>website=rahulshettyacademy.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220812 21:29:09.529" level="INFO">&amp;{data} = { name=rahulshetty | course=RobotFramework | website=rahulshettyacademy.com }</msg>
+<status status="PASS" starttime="20220812 21:29:09.529" endtime="20220812 21:29:09.529"/>
 </kw>
-<kw name="Delete All Cookies" library="SeleniumLibrary">
-<doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20220811 22:55:49.359" endtime="20220811 22:55:49.370"/>
+<kw name="Log" library="BuiltIn">
+<arg>${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220812 21:29:09.530" level="INFO">{'name': 'rahulshetty', 'course': 'RobotFramework', 'website': 'rahulshettyacademy.com'}</msg>
+<status status="PASS" starttime="20220812 21:29:09.530" endtime="20220812 21:29:09.530"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220811 22:55:49.370" endtime="20220811 22:55:49.487"/>
+<kw name="Dictionary Should Contain Key" library="Collections">
+<arg>${data}</arg>
+<arg>name</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" starttime="20220812 21:29:09.531" endtime="20220812 21:29:09.531"/>
 </kw>
-<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
-<arg>10 s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220811 22:55:49.487" endtime="20220811 22:55:49.490"/>
+<kw name="Log" library="BuiltIn">
+<arg>${data}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220812 21:29:09.531" level="INFO">rahulshetty</msg>
+<status status="PASS" starttime="20220812 21:29:09.531" endtime="20220812 21:29:09.531"/>
 </kw>
-<if>
-<branch type="IF" condition="'${url}' == 'site1'">
-<kw name="Set Variable" library="BuiltIn">
+<kw name="Get From Dictionary" library="Collections">
 <var>${url}</var>
-<arg>https://www.rahulshettyacademy.com/loginpagePractise/</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220811 22:55:49.491" level="INFO">${url} = https://www.rahulshettyacademy.com/loginpagePractise/</msg>
-<status status="PASS" starttime="20220811 22:55:49.491" endtime="20220811 22:55:49.491"/>
+<arg>${data}</arg>
+<arg>website</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220812 21:29:09.532" level="INFO">${url} = rahulshettyacademy.com</msg>
+<status status="PASS" starttime="20220812 21:29:09.532" endtime="20220812 21:29:09.532"/>
 </kw>
-<status status="PASS" starttime="20220811 22:55:49.491" endtime="20220811 22:55:49.491"/>
-</branch>
-<branch type="ELSE IF" condition="'${url}' == 'site2'">
-<kw name="Set Variable" library="BuiltIn">
-<var>${url}</var>
-<arg>https://rahulshettyacademy.com</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20220811 22:55:49.491" endtime="20220811 22:55:49.491"/>
-</kw>
-<status status="NOT RUN" starttime="20220811 22:55:49.491" endtime="20220811 22:55:49.491"/>
-</branch>
-<status status="PASS" starttime="20220811 22:55:49.490" endtime="20220811 22:55:49.492"/>
-</if>
-<kw name="Go To" library="SeleniumLibrary">
+<kw name="Log" library="BuiltIn">
 <arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220811 22:55:49.492" level="INFO">Opening url 'https://www.rahulshettyacademy.com/loginpagePractise/'</msg>
-<status status="PASS" starttime="20220811 22:55:49.492" endtime="20220811 22:55:50.089"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:48.257" endtime="20220811 22:55:50.089"/>
-</kw>
-<kw name="Fill out the login form" library="LandingPage">
-<arg>${user_name}</arg>
-<arg>${valid_password}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220811 22:55:50.091" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
-<status status="PASS" starttime="20220811 22:55:50.090" endtime="20220811 22:55:50.184"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>id:password</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220811 22:55:50.185" level="INFO">Typing password into text field 'id:password'.</msg>
-<msg timestamp="20220811 22:55:50.221" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220811 22:55:50.260" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220811 22:55:50.184" endtime="20220811 22:55:50.260"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:50.089" endtime="20220811 22:55:50.260"/>
-</kw>
-<kw name="click the login button" library="LandingPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>id:signInBtn</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220811 22:55:50.261" level="INFO">Clicking button 'id:signInBtn'.</msg>
-<status status="PASS" starttime="20220811 22:55:50.261" endtime="20220811 22:55:50.304"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:50.261" endtime="20220811 22:55:50.304"/>
-</kw>
-<kw name="wait until element is located in the page" library="ShopPage">
-<kw name="wait until element passed is located on page" library="Generic">
-<arg>${shop_page_load}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${page_locator}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220811 22:55:50.305" endtime="20220811 22:55:54.193"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:50.304" endtime="20220811 22:55:54.193"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:50.304" endtime="20220811 22:55:54.193"/>
-</kw>
-<kw name="verify card titles in the shop page" library="ShopPage">
-<kw name="Create List" library="BuiltIn">
-<var>@{expectedList}</var>
-<arg>iphone X</arg>
-<arg>Samsung Note 8</arg>
-<arg>Nokia Edge</arg>
-<arg>Blackberry</arg>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20220811 22:55:54.195" level="INFO">@{expectedList} = [ iphone X | Samsung Note 8 | Nokia Edge | Blackberry ]</msg>
-<status status="PASS" starttime="20220811 22:55:54.195" endtime="20220811 22:55:54.195"/>
-</kw>
-<kw name="Get WebElements" library="SeleniumLibrary">
-<var>${elements}</var>
-<arg>css:.card-title</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20220811 22:55:54.205" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="abc1411adf3b03874caa6c3890d738b1", element="8a5c32ee-31e7-44ab-830f-a27b135e198f")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
-<status status="PASS" starttime="20220811 22:55:54.195" endtime="20220811 22:55:54.205"/>
-</kw>
-<kw name="Create List" library="BuiltIn">
-<var>@{actualList}</var>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20220811 22:55:54.207" level="INFO">@{actualList} = [ ]</msg>
-<status status="PASS" starttime="20220811 22:55:54.207" endtime="20220811 22:55:54.207"/>
-</kw>
-<for flavor="IN">
-<var>${element}</var>
-<value>@{elements}</value>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="abc1411adf3b03874caa6c3890d738b1", element="8a5c32ee-31e7-44ab-830f-a27b135e198f")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${element.text}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220811 22:55:54.216" level="INFO">iphone X</msg>
-<status status="PASS" starttime="20220811 22:55:54.207" endtime="20220811 22:55:54.216"/>
+<msg timestamp="20220812 21:29:09.533" level="INFO">rahulshettyacademy.com</msg>
+<status status="PASS" starttime="20220812 21:29:09.533" endtime="20220812 21:29:09.533"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${actual_list}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20220811 22:55:54.218" endtime="20220811 22:55:54.228"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:54.207" endtime="20220811 22:55:54.228"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="abc1411adf3b03874caa6c3890d738b1", element="1969b907-9449-4d98-ac0c-e886ecba866d")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220811 22:55:54.241" level="INFO">Samsung Note 8</msg>
-<status status="PASS" starttime="20220811 22:55:54.228" endtime="20220811 22:55:54.241"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${actual_list}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20220811 22:55:54.241" endtime="20220811 22:55:54.249"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:54.228" endtime="20220811 22:55:54.249"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="abc1411adf3b03874caa6c3890d738b1", element="c3d3b658-3ab5-41e6-91fe-d5001fc0d6e3")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220811 22:55:54.263" level="INFO">Nokia Edge</msg>
-<status status="PASS" starttime="20220811 22:55:54.250" endtime="20220811 22:55:54.263"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${actual_list}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20220811 22:55:54.263" endtime="20220811 22:55:54.270"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:54.249" endtime="20220811 22:55:54.270"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="abc1411adf3b03874caa6c3890d738b1", element="92acbbb2-cf9f-4abb-9ab4-22851e4d7684")&gt;</var>
-<kw name="Log" library="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220811 22:55:54.281" level="INFO">Blackberry</msg>
-<status status="PASS" starttime="20220811 22:55:54.270" endtime="20220811 22:55:54.281"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${actual_list}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20220811 22:55:54.281" endtime="20220811 22:55:54.288"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:54.270" endtime="20220811 22:55:54.288"/>
-</iter>
-<status status="PASS" starttime="20220811 22:55:54.207" endtime="20220811 22:55:54.288"/>
-</for>
-<kw name="Lists Should Be Equal" library="Collections">
-<arg>${expectedList}</arg>
-<arg>${actualList}</arg>
-<doc>Fails if given lists are unequal.</doc>
-<status status="PASS" starttime="20220811 22:55:54.288" endtime="20220811 22:55:54.289"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:54.194" endtime="20220811 22:55:54.289"/>
-</kw>
-<kw name="Add Items To Cart And Checkout" library="Shop">
-<arg>${listOfProducts}</arg>
-<msg timestamp="20220811 22:55:54.300" level="INFO">Clicking button 'xpath:(//*[@class='card-footer'])[1]/button'.</msg>
-<msg timestamp="20220811 22:55:54.374" level="INFO">Clicking button 'xpath:(//*[@class='card-footer'])[3]/button'.</msg>
-<msg timestamp="20220811 22:55:54.424" level="INFO">Clicking button 'xpath:(//*[@class='card-footer'])[4]/button'.</msg>
-<msg timestamp="20220811 22:55:54.730" level="INFO">Clicking element 'xpath://a[contains(text(),'Checkout')]'.</msg>
-<status status="PASS" starttime="20220811 22:55:54.289" endtime="20220811 22:55:54.769"/>
-</kw>
-<kw name="Verify items in the Checkout Page and Proceed" library="CheckOutPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>css:.btn-success</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220811 22:55:54.770" level="INFO">Clicking element 'css:.btn-success'.</msg>
-<status status="PASS" starttime="20220811 22:55:54.770" endtime="20220811 22:55:54.819"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:54.769" endtime="20220811 22:55:54.819"/>
-</kw>
-<kw name="Enter the Country and select the terms" library="ConfirmationPage">
-<arg>@{country_name}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:country</arg>
-<arg>${country_name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220811 22:55:54.820" level="INFO">Typing text 'India' into text field 'id:country'.</msg>
-<status status="PASS" starttime="20220811 22:55:54.820" endtime="20220811 22:55:54.915"/>
-</kw>
-<kw name="wait until element passed is located on page" library="Generic">
-<arg>//a[text()='${country_name}']</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${page_locator}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220811 22:55:54.916" endtime="20220811 22:55:59.977"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:54.915" endtime="20220811 22:55:59.978"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//a[text()='${country_name}']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220811 22:55:59.978" level="INFO">Clicking element '//a[text()='India']'.</msg>
-<status status="PASS" starttime="20220811 22:55:59.978" endtime="20220811 22:56:00.013"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>css:.checkbox label</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220811 22:56:00.014" level="INFO">Clicking element 'css:.checkbox label'.</msg>
-<status status="PASS" starttime="20220811 22:56:00.013" endtime="20220811 22:56:00.054"/>
-</kw>
-<status status="PASS" starttime="20220811 22:55:54.819" endtime="20220811 22:56:00.054"/>
-</kw>
-<kw name="Purchase the Product and Confirm the purchase" library="ConfirmationPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>css:.btn-success</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220811 22:56:00.054" level="INFO">Clicking button 'css:.btn-success'.</msg>
-<status status="PASS" starttime="20220811 22:56:00.054" endtime="20220811 22:56:00.103"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>Success!</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220811 22:56:00.117" level="INFO">Current page contains text 'Success!'.</msg>
-<status status="PASS" starttime="20220811 22:56:00.103" endtime="20220811 22:56:00.117"/>
-</kw>
-<status status="PASS" starttime="20220811 22:56:00.054" endtime="20220811 22:56:00.117"/>
-</kw>
-<kw name="close browser session" library="Generic" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220811 22:56:00.118" endtime="20220811 22:56:02.236"/>
-</kw>
-<status status="PASS" starttime="20220811 22:56:00.117" endtime="20220811 22:56:02.237"/>
-</kw>
-<tag>Smoke</tag>
-<status status="PASS" starttime="20220811 22:55:48.256" endtime="20220811 22:56:02.237"/>
+<status status="PASS" starttime="20220812 21:29:09.528" endtime="20220812 21:29:09.533"/>
 </test>
-<doc>To validate the login error message</doc>
-<status status="PASS" starttime="20220811 22:55:48.123" endtime="20220811 22:56:02.239"/>
+<test id="s1-t2" name="Add book into library database" line="20">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{req_body}</var>
+<arg>name=${book_name}</arg>
+<arg>isbn=981466</arg>
+<arg>aisle=324353</arg>
+<arg>author=rahulshetty</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220812 21:29:09.535" level="INFO">&amp;{req_body} = { name=RobotFramework | isbn=981466 | aisle=324353 | author=rahulshetty }</msg>
+<status status="PASS" starttime="20220812 21:29:09.535" endtime="20220812 21:29:09.535"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${base_url}/Library/Addbook.php</arg>
+<arg>json=${req_body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20220812 21:29:09.853" level="INFO">POST Request : url=https://rahulshettyacademy.com/Library/Addbook.php 
+ path_url=/Library/Addbook.php 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '88', 'Content-Type': 'application/json'} 
+ body=b'{"name": "RobotFramework", "isbn": "981466", "aisle": "324353", "author": "rahulshetty"}' 
+ </msg>
+<msg timestamp="20220812 21:29:09.853" level="INFO">POST Response : url=https://rahulshettyacademy.com/Library/Addbook.php 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 13 Aug 2022 01:29:10 GMT', 'Server': 'Apache/2.4.41 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '48', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'} 
+ body={"Msg":"successfully added","ID":"981466324353"} 
+ </msg>
+<msg timestamp="20220812 21:29:09.854" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220812 21:29:09.536" endtime="20220812 21:29:09.854"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220812 21:29:09.855" level="INFO">{'Msg': 'successfully added', 'ID': '981466324353'}</msg>
+<status status="PASS" starttime="20220812 21:29:09.854" endtime="20220812 21:29:09.855"/>
+</kw>
+<kw name="Dictionary Should Contain Key" library="Collections">
+<arg>${response.json()}</arg>
+<arg>ID</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" starttime="20220812 21:29:09.856" endtime="20220812 21:29:09.856"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${book_id}</var>
+<arg>${response.json()}</arg>
+<arg>ID</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220812 21:29:09.858" level="INFO">${book_id} = 981466324353</msg>
+<status status="PASS" starttime="20220812 21:29:09.858" endtime="20220812 21:29:09.858"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${book_id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220812 21:29:09.859" level="INFO">981466324353</msg>
+<status status="PASS" starttime="20220812 21:29:09.859" endtime="20220812 21:29:09.859"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${book_id}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220812 21:29:09.860" level="INFO">${book_id} = 981466324353</msg>
+<status status="PASS" starttime="20220812 21:29:09.859" endtime="20220812 21:29:09.860"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>successfully added</arg>
+<arg>${response.json()}[Msg]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220812 21:29:09.860" endtime="20220812 21:29:09.860"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20220812 21:29:09.861" endtime="20220812 21:29:09.861"/>
+</kw>
+<status status="PASS" starttime="20220812 21:29:09.534" endtime="20220812 21:29:09.862"/>
+</test>
+<test id="s1-t3" name="Get book into library database" line="32">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>url=${base_url}/Library/GetBook.php</arg>
+<arg>params=ID=${book_id}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220812 21:29:10.177" level="INFO">GET Request : url=https://rahulshettyacademy.com/Library/GetBook.php?ID=981466324353 
+ path_url=/Library/GetBook.php?ID=981466324353 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220812 21:29:10.177" level="INFO">GET Response : url=https://rahulshettyacademy.com/Library/GetBook.php?ID=981466324353 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 13 Aug 2022 01:29:10 GMT', 'Server': 'Apache/2.4.41 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '88', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'} 
+ body=[{"book_name":"RobotFramework","isbn":"981466","aisle":"324353","author":"rahulshetty"}] 
+ </msg>
+<msg timestamp="20220812 21:29:10.177" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220812 21:29:09.864" endtime="20220812 21:29:10.177"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220812 21:29:10.178" level="INFO">[{'book_name': 'RobotFramework', 'isbn': '981466', 'aisle': '324353', 'author': 'rahulshetty'}]</msg>
+<status status="PASS" starttime="20220812 21:29:10.178" endtime="20220812 21:29:10.179"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${book_name}</arg>
+<arg>${response.json()}[0][book_name]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220812 21:29:10.179" endtime="20220812 21:29:10.179"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20220812 21:29:10.180" endtime="20220812 21:29:10.180"/>
+</kw>
+<status status="PASS" starttime="20220812 21:29:09.863" endtime="20220812 21:29:10.180"/>
+</test>
+<test id="s1-t4" name="Delete book into library database" line="40">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{delete_book}</var>
+<arg>ID=${book_id}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220812 21:29:10.182" level="INFO">&amp;{delete_book} = { ID=981466324353 }</msg>
+<status status="PASS" starttime="20220812 21:29:10.182" endtime="20220812 21:29:10.182"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>url=${base_url}/Library/DeleteBook.php</arg>
+<arg>json=${delete_book}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20220812 21:29:10.509" level="INFO">POST Request : url=https://rahulshettyacademy.com/Library/DeleteBook.php 
+ path_url=/Library/DeleteBook.php 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '22', 'Content-Type': 'application/json'} 
+ body=b'{"ID": "981466324353"}' 
+ </msg>
+<msg timestamp="20220812 21:29:10.509" level="INFO">POST Response : url=https://rahulshettyacademy.com/Library/DeleteBook.php 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 13 Aug 2022 01:29:11 GMT', 'Server': 'Apache/2.4.41 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '38', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'} 
+ body={"msg":"book is successfully deleted"} 
+ </msg>
+<msg timestamp="20220812 21:29:10.509" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220812 21:29:10.183" endtime="20220812 21:29:10.509"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220812 21:29:10.511" level="INFO">{'msg': 'book is successfully deleted'}</msg>
+<status status="PASS" starttime="20220812 21:29:10.510" endtime="20220812 21:29:10.511"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20220812 21:29:10.512" endtime="20220812 21:29:10.512"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>book is successfully deleted</arg>
+<arg>${response.json()}[msg]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220812 21:29:10.513" endtime="20220812 21:29:10.513"/>
+</kw>
+<status status="PASS" starttime="20220812 21:29:10.181" endtime="20220812 21:29:10.514"/>
+</test>
+<status status="PASS" starttime="20220812 21:29:09.465" endtime="20220812 21:29:10.515"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Smoke</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="PageObjectDemo">PageObjectDemo</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="TestDemoAPI">TestDemoAPI</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220811 22:55:48.256" level="ERROR">Error in file 'C:\Users\WONDERS\Desktop\training\TestSuites\Udemy\PageObjectDemo.robot' on line 10: Importing library 'AllureReportingLibrary' failed: ModuleNotFoundError: No module named 'AllureReportingLibrary'
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\Scripts\robot.exe
-  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\python310.zip
-  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\DLLs
-  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\lib
-  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310
-  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\lib\site-packages</msg>
 </errors>
 </robot>
