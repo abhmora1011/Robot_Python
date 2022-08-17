@@ -1,163 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220812 22:09:24.650" rpa="false" schemaversion="3">
-<suite id="s1" name="Training" source="C:\Users\WONDERS\Desktop\training">
-<suite id="s1-s1" name="API" source="C:\Users\WONDERS\Desktop\training\API">
-<suite id="s1-s1-s1" name="TestDemoAPI" source="C:\Users\WONDERS\Desktop\training\API\TestDemoAPI.robot">
-<test id="s1-s1-s1-t1" name="Add book into library database" line="20">
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{req_body}</var>
-<arg>name=${book_name}</arg>
-<arg>isbn=981466</arg>
-<arg>aisle=324353</arg>
-<arg>author=rahulshetty</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220812 22:09:24.676" level="INFO">&amp;{req_body} = { name=RobotFramework | isbn=981466 | aisle=324353 | author=rahulshetty }</msg>
-<status status="PASS" starttime="20220812 22:09:24.676" endtime="20220812 22:09:24.676"/>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220815 23:46:22.373" rpa="false" schemaversion="3">
+<suite id="s1" name="LoginTest" source="C:\Users\WONDERS\Desktop\training\TestSuites\Udemy\LoginTest.robot">
+<test id="s1-t1" name="Verify that login works" line="9">
+<kw name="open the browser with OrangeDemo url">
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=../../../chromedriver</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220815 23:46:22.491" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20220815 23:46:22.507" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20220815 23:46:22.508" level="FAIL">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</msg>
+<status status="FAIL" starttime="20220815 23:46:22.491" endtime="20220815 23:46:22.509"/>
 </kw>
-<kw name="POST">
-<var>${response}</var>
-<arg>${base_url}/Library/Addbook.php</arg>
-<arg>json=${req_body}</arg>
-<arg>expected_status=200</arg>
-<msg timestamp="20220812 22:09:24.677" level="FAIL">No keyword with name 'POST' found.</msg>
-<status status="FAIL" starttime="20220812 22:09:24.677" endtime="20220812 22:09:24.677"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220815 23:46:22.509" endtime="20220815 23:46:22.509"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${response.json()}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20220812 22:09:24.678" endtime="20220812 22:09:24.678"/>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.rahulshettyacademy.com/loginpagePractise/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" starttime="20220815 23:46:22.509" endtime="20220815 23:46:22.509"/>
 </kw>
-<kw name="Dictionary Should Contain Key" library="Collections">
-<arg>${response.json()}</arg>
-<arg>ID</arg>
-<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="NOT RUN" starttime="20220812 22:09:24.678" endtime="20220812 22:09:24.678"/>
+<status status="FAIL" starttime="20220815 23:46:22.491" endtime="20220815 23:46:22.509"/>
 </kw>
-<kw name="Get From Dictionary" library="Collections">
-<var>${book_id}</var>
-<arg>${response.json()}</arg>
-<arg>ID</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="NOT RUN" starttime="20220812 22:09:24.678" endtime="20220812 22:09:24.678"/>
+<kw name="fill out the username and password fields">
+<status status="NOT RUN" starttime="20220815 23:46:22.510" endtime="20220815 23:46:22.510"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${book_id}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20220812 22:09:24.678" endtime="20220812 22:09:24.678"/>
+<kw name="wait login error message">
+<status status="NOT RUN" starttime="20220815 23:46:22.510" endtime="20220815 23:46:22.510"/>
 </kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${book_id}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" starttime="20220812 22:09:24.678" endtime="20220812 22:09:24.678"/>
+<kw name="verify error message is correct">
+<status status="NOT RUN" starttime="20220815 23:46:22.510" endtime="20220815 23:46:22.510"/>
 </kw>
-<kw name="Should Be Equal As Strings" library="BuiltIn">
-<arg>successfully added</arg>
-<arg>${response.json()}[Msg]</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" starttime="20220812 22:09:24.678" endtime="20220812 22:09:24.678"/>
-</kw>
-<kw name="status should be">
-<arg>200</arg>
-<arg>${response}</arg>
-<status status="NOT RUN" starttime="20220812 22:09:24.679" endtime="20220812 22:09:24.679"/>
-</kw>
-<tag>API</tag>
-<status status="FAIL" starttime="20220812 22:09:24.676" endtime="20220812 22:09:24.679">No keyword with name 'POST' found.</status>
+<status status="FAIL" starttime="20220815 23:46:22.490" endtime="20220815 23:46:22.510">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
 </test>
-<test id="s1-s1-s1-t2" name="Get book into library database" line="33">
-<kw name="GET">
-<var>${response}</var>
-<arg>url=${base_url}/Library/GetBook.php</arg>
-<arg>params=ID=${book_id}</arg>
-<arg>expected_status=200</arg>
-<msg timestamp="20220812 22:09:24.681" level="FAIL">No keyword with name 'GET' found. Did you mean:
-    BuiltIn.Get Time</msg>
-<status status="FAIL" starttime="20220812 22:09:24.681" endtime="20220812 22:09:24.681"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${response.json()}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20220812 22:09:24.681" endtime="20220812 22:09:24.681"/>
-</kw>
-<kw name="Should Be Equal As Strings" library="BuiltIn">
-<arg>${book_name}</arg>
-<arg>${response.json()}[0][book_name]</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" starttime="20220812 22:09:24.681" endtime="20220812 22:09:24.681"/>
-</kw>
-<kw name="status should be">
-<arg>200</arg>
-<arg>${response}</arg>
-<status status="NOT RUN" starttime="20220812 22:09:24.682" endtime="20220812 22:09:24.682"/>
-</kw>
-<tag>API</tag>
-<status status="FAIL" starttime="20220812 22:09:24.680" endtime="20220812 22:09:24.682">No keyword with name 'GET' found. Did you mean:
-    BuiltIn.Get Time</status>
-</test>
-<test id="s1-s1-s1-t3" name="Delete book into library database" line="42">
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{delete_book}</var>
-<arg>ID=${book_id}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220812 22:09:24.683" level="INFO">&amp;{delete_book} = { ID= }</msg>
-<status status="PASS" starttime="20220812 22:09:24.682" endtime="20220812 22:09:24.683"/>
-</kw>
-<kw name="POST">
-<var>${response}</var>
-<arg>url=${base_url}/Library/DeleteBook.php</arg>
-<arg>json=${delete_book}</arg>
-<arg>expected_status=200</arg>
-<msg timestamp="20220812 22:09:24.684" level="FAIL">No keyword with name 'POST' found.</msg>
-<status status="FAIL" starttime="20220812 22:09:24.684" endtime="20220812 22:09:24.684"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${response.json()}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20220812 22:09:24.684" endtime="20220812 22:09:24.684"/>
-</kw>
-<kw name="status should be">
-<arg>200</arg>
-<arg>${response}</arg>
-<status status="NOT RUN" starttime="20220812 22:09:24.686" endtime="20220812 22:09:24.686"/>
-</kw>
-<kw name="Should Be Equal As Strings" library="BuiltIn">
-<arg>book is successfully deleted</arg>
-<arg>${response.json()}[msg]</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" starttime="20220812 22:09:24.686" endtime="20220812 22:09:24.686"/>
-</kw>
-<tag>API</tag>
-<status status="FAIL" starttime="20220812 22:09:24.682" endtime="20220812 22:09:24.686">No keyword with name 'POST' found.</status>
-</test>
-<status status="FAIL" starttime="20220812 22:09:24.670" endtime="20220812 22:09:24.686"/>
-</suite>
-<status status="FAIL" starttime="20220812 22:09:24.668" endtime="20220812 22:09:24.687"/>
-</suite>
-<status status="FAIL" starttime="20220812 22:09:24.654" endtime="20220812 22:09:24.687"/>
+<doc>To validate the login error message</doc>
+<status status="FAIL" starttime="20220815 23:46:22.374" endtime="20220815 23:46:22.511"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="3" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="3" skip="0">API</stat>
 </tag>
 <suite>
-<stat pass="0" fail="3" skip="0" id="s1" name="Training">Training</stat>
-<stat pass="0" fail="3" skip="0" id="s1-s1" name="API">Training.API</stat>
-<stat pass="0" fail="3" skip="0" id="s1-s1-s1" name="TestDemoAPI">Training.API.TestDemoAPI</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="LoginTest">LoginTest</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220812 22:09:24.675" level="ERROR">Error in file 'C:\Users\WONDERS\Desktop\training\API\TestDemoAPI.robot' on line 3: Importing library 'RequestsLibrary' failed: ModuleNotFoundError: No module named 'RequestsLibrary'
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\Scripts\robot.exe
-  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\python310.zip
-  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\DLLs
-  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\lib
-  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310
-  C:\Users\WONDERS\AppData\Local\Programs\Python\Python310\lib\site-packages</msg>
 </errors>
 </robot>

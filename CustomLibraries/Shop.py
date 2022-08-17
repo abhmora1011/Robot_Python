@@ -32,6 +32,14 @@ class Shop:
         self.selLib.scroll_element_into_view("xpath://a[contains(text(),'Checkout')]")
         self.selLib.click_element("xpath://a[contains(text(),'Checkout')]")
 
+    @keyword
+    def verify_multiple_elements(self, element_list, locator):
+        element_locator = self.selLib.get_webelements("{}".format(locator))
+        actual_elements = ()
+        for element in element_locator:
+            self.selLib.append_to_list("{},{}".format(actual_elements, element.text))
+        self.selLib.list_should_be_equal("{},{}".format(element_list, actual_elements))
+
 
 
 

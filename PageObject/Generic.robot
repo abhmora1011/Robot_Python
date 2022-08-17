@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${url}                      site1
+${url}    site1
 
 *** Keywords ***
 open the browser with url
