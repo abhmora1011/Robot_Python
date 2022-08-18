@@ -1,5 +1,7 @@
 import os
 
+# We can also move a directory
+
 source = "C:\\Users\\WONDERS\\Documents\\SampleTest.txt"
 destination = "C:\\Users\\WONDERS\\Desktop\\SampleTest2.txt"
 
