@@ -4,7 +4,7 @@
 # abstract class =  a class which contains one or more abstract methods.
 # abstract method = a method that has a declararion but does not have an implementation
 
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod # abc = abstract base class
 
 class Vehicle(ABC):
     @abstractmethod
