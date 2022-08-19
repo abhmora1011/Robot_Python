@@ -11,7 +11,7 @@ capitals.update({'USA': 'Las Vegas'}) # to change the existing value
 capitals.pop('China') # To delete a value
 # capitals.clear()
 
-print(capitals['Germany']) # to access the value of Germany
+print(capitals['Germany']) # to see the value of Germany
 print(capitals.get('Germany')) # to get the value of Germany
 print(capitals.keys()) # to print the keys
 print(capitals.values()) # To print the values

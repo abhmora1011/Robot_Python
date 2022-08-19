@@ -15,4 +15,17 @@ print(attractive)
 #Sandy = 30
 #Squidward = 30
 
-# Spongebob, Patrick, Sandy,
+Spongebob = Patrick = Sandy = Squidward = 30
+
+print(Spongebob)
+print(Patrick)
+print(Sandy)
+print(Squidward)
+
+# Abe
+# 34
+# True
+# 30
+# 30
+# 30
+# 30

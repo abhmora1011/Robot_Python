@@ -14,7 +14,7 @@ import time
 #     print(i)
 #     time.sleep(1)
 
-for seconds in range(10,0,-1):
+for seconds in range(10, 0, -1):
     print(seconds)
     time.sleep(1)
 
