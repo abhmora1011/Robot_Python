@@ -51,3 +51,4 @@ wait until it checks and display error message
 verify error message is correct
     element text should be     css:.alert-danger   Incorrect username/password.
     close browser
+    checkbox should be selected
