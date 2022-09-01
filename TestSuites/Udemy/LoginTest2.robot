@@ -6,31 +6,31 @@ Test Setup      open the browser with OrangeDemo url
 Test Teardown       close browser session
 
 *** Test Cases ***
-#Verify that error message appears
-#    [Documentation]    Verify the flow until the error message show
-#    Fill out the login form    ${user_name}     ${invalid_password}
-#    click the login button
-#    wait login error message    ${Error_Message_Login}
-#
-#Verify end to end process
-#    [Documentation]    Verify the flow of end to end process
-#    fill out the login form    ${user_name}     ${valid_password}
-#    click the login button
-#    wait until element is present       ${element_link}
+Verify that error message appears
+    [Documentation]    Verify the flow until the error message show
+    Fill out the login form    ${user_name}     ${invalid_password}
+    click the login button
+    wait login error message    ${Error_Message_Login}
 
-#Verify card display in the shopping page
-#   If gusto mo na per test cases lang yung setup and teardown
-#   [Setup]    open the browser with OrangeDemo url
-#   [Teardown]    close browser session
-#    fill out the login form    ${user_name}     ${valid_password}
-#    click the login button
-#    wait until element is located in the page   ${shop_page_load}
-#    verify card titles in the shop page
-#    select the card    Nokia Edge
-#
-#Fill the Login Details and select the user option
-#    fill out the login form    ${user_name}     ${valid_password}
-#    Fill the Login Details and select the user option
+Verify end to end process
+    [Documentation]    Verify the flow of end to end process
+    fill out the login form    ${user_name}     ${valid_password}
+    click the login button
+    wait until element is present       ${shop_page_load}
+
+Verify card display in the shopping page
+   #If gusto mo na per test cases lang yung setup and teardown
+   [Setup]    open the browser with OrangeDemo url
+   [Teardown]    close browser session
+    fill out the login form    ${user_name}     ${valid_password}
+    click the login button
+    wait until element is located in the page   ${shop_page_load}
+    verify card titles in the shop page
+    select the card    Nokia Edge
+
+Fill the Login Details and select the user option
+    fill out the login form    ${user_name}     ${valid_password}
+    Fill the Login Details and select the user option
 
 *** Keywords ***
 Fill out the login form
