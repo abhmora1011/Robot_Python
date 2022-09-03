@@ -11,17 +11,19 @@ def submit():
     for index in food:
         print(index)
 
+
 def add():
     listbox.insert(listbox.size(), entrybox.get())
     listbox.config(height=listbox.size())
 
-def delete():
 
+def delete():
     for index in reversed(listbox.curselection()):
         listbox.delete(index)
 
     # listbox.delete(listbox.curselection())
     # listbox.config(height=listbox.size())
+
 
 from tkinter import *
 
